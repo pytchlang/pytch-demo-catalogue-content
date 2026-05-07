@@ -1,1 +1,1 @@
-A cookbook recipe explaining how to implement directional movement using keys.
+Three different ways of moving a sprite with the keyboard.
