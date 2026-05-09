@@ -1,69 +1,66 @@
-# Basic Firing
+# Launch one thing at a time
 
-## Player
+Pressing the left arrow key makes the pink cloud (on the left) drop a
+raindrop.  Only one raindrop can exist at a time.
 
-The script for the player isn't very important for this example.
-Just glide left and right across the bottom of the screen.
+## The `LeftCloud` sprite
 
-## Bullet
+The script for the cloud isn't very important for this example.  The
+cloud sets itself to have a sensible size, then glides left and right
+across the left-hand half at the top of the screen.
 
-### When green start button is pressed
+## The `LeftRaindrop` sprite
 
-The bullet can be in one of two states. Either we're waiting to be fired, or we're in the middle of being fired up the screen. Keep
-track of which state we're in, by remembering whether we're in the middle of being fired. At the start, we're NOT in the middle of
-being fired.
+The important idea here is that the raindrop needs to keep track of
+whether it is falling.  To do this, we give it a variable `falling`
+which can be either `True` or `False`.
 
-While we're waiting to be fired, we don't want to be visible.
+When the game starts, the drop is not falling, so the _green flag_
+script records this fact by setting `self.falling` to `False`.  That
+script also makes the raindrop a sensible size and hides it.
 
-### When "space" key is pressed
+When the left arrow key is pressed, the script first checks whether
+the drop is already falling, and if so, uses the `return` statement to
+stop running the script immediately.  If the drop is _not_ currently
+falling, we want to start it falling, so set the variable to say that
+it now _is_ falling.  The raindrop then goes to just below where its
+cloud is, and moves down the screen.  When it has gone off the bottom,
+it records the fact that it's no longer falling.
 
-Once we've started being fired up the screen, we want pressing space
-to have no effect. So quit this script before doing any real work
-if we are already in the middle of being fired.
 
-Once we get here, we ARE in the middle of being fired. Remember
-that fact.
+# Launch many things at a time
 
-Find the player sprite and move ourselves to its location, except a bit higher ("+20" for the Y coordinate) so the bullet appears at the top of the ship.
+## The `RightCloud` sprite
 
-Become visible.
+The script for the cloud isn't very important for this example.  The
+cloud sets itself to have a sensible size, then glides left and right
+across the right-hand half at the top of the screen.  It uses slightly
+different timing to make the movement of the two clouds more
+interesting.
 
-Move quite quickly up the screen, until we're well off the top.
+## The `RightRaindrop` sprite
 
-We are no longer in the middle of being fired, so remember that.
+This is more complicated than the "one thing at a time" version.  To
+have more than one raindrop, we use _clones_.  The _original_ raindrop
+is not visible.  Its job will be to launch clones of itself when the
+right arrow key is pressed.  The _green flag_ script sets this up.
 
-# Advanced Firing
+When the right arrow key is pressed, the raindrop needs to check a
+couple of things before creating a clone:
 
-## Player
+* Only the original (hidden) raindrop should create a clone.  Without
+  this check, every raindrop would create a new clone and we'd soon
+  end up with far too many raindrops.  The code says to stop running
+  the script (`return`) if this is not the original raindrop.
 
-The script for the player isn't very important for this example.
-Just glide left and right across the bottom of the screen.
+* We need to _not_ create a clone if there are already ten clones.
+  The code says to stop running the script (`return`) if the length of
+  the list of all clones is ten.
 
-## Bullet
+If those checks are OK, the code creates a raindrop clone.
 
-### When green start button is pressed
-
-This variable doesn't change, but it's helpful to have a named value
-for the maximum number of Bullet clones we want to be allowed to
-exist at one time.
-
-### When "space" key is pressed
-
-Make sure that only the original (hidden) Bullet responds to the
-keypress. Without this, every clone makes a new clone and we soon
-have thousands of clones.
-
-If there are already the maximum number of Bullet clones being fired, stop here.
-
-Make the new Bullet clone; the "when I start as a clone" script below does the rest of the work.
-
-### When bullet starts as a clone
-
-Find the player sprite and move ourselves to its location, except a bit higher ("+20" for the Y coordinate) so the bullet appears at the top of the ship.
-
-Become visible.
-
-Move quite quickly up the screen, until we're well off the top.
-
-This clone has finished its job, so delete it to avoid cluttering up
-the game with lots of clones.
+When a clone is created, it runs the _when I start as a clone_ script,
+which moves the (clone) raindrop to just below its cloud, shows
+itself, then moves down the screen.  Once it's off the bottom of the
+screen, we get rid of that clone.  As an experiment, delete the
+`delete_this_clone()` line and make sure you understand what happens.

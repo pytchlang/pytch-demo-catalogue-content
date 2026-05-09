@@ -1,1 +1,2 @@
-This demo explains how to fire projectiles for space shooter games.
+Launch one sprite from another, for example to drop raindrops, scatter
+seeds, or fire missiles.
