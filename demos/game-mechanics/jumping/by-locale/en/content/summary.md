@@ -1,1 +1,1 @@
-A template for basic platformer jumping.
+Make a character jump and land smoothly.
