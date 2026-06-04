@@ -1,1 +1,1 @@
-This demo explains how to create the parallax effect for backgrounds in your projects.
+Give a 3D effect with "parallax" scrolling.

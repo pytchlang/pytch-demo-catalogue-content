@@ -1,30 +1,36 @@
-# Basic Jumping
+# Left and right movement
+
+How the sprite moves is not the main point of this demo, but it might
+be useful to look at the way we change the costume to make the
+character face the direction it's moving.  The code does not check for
+where the character is on the screen, so you can move it off the
+screen.
+
+
+# Jumping
+
+The character jumps when you press the "space" key, so the code is in
+the _when space key pressed_ script.  The main logic for jumping is
+the section involving the `y_velocity` variable.  We move the
+character up quite quickly at the start, changing its _y_ coordinate
+by 8.  Then we reduce the velocity down to zero, and through zero to
+-8, to move the character back down to earth.  All these changes to
+_y_ add up to zero, leaving the character at exactly the same height
+it started.  This whole process mimics the way gravity works.
+
+
+# Avoiding double-jumps
+
+We want to make sure the character doesn't start a new jump while it's
+in the middle of a previous one.  The code uses a Boolean `jumping`
+variable to track this.  Initially (_when green flag clicked_), the
+character is _not_ jumping, so `jumping` is `False`.  In the _when
+space key pressed_ script, we first check whether the character is in
+the middle of a jump, and stop running that script if so.  Then we set
+`jumping` to `True` while the up and down movement is happening, and
+back to `False` once that's done.
+
+
+# Credits
+
 Thanks [GrafxKid](https://opengameart.org/content/green-robot) for costume!
-
-Start off in the middle left/right, and quite near the bottom,
-to stand on the earth.
-
-We need to remember whether we're currently in the middle of a jump
-or not.  We start NOT in the middle of a jump.
-
-Continuously check for left/right keys being pressed, and adjust our
-X coordinate if needed.  This simple version does not check for
-where the player is on the screen, so you can move the ship right
-outside the screen.  It does choose a different costume for moving
-left vs moving right, though, to look better.
-
-If we're already in the middle of jumping, quit this script
-immediately, so the player can't stack jumps.
-
-Remember that we ARE now jumping.
-
-# Smooth Jumping
-To get a smooth jump, start by moving up quite quickly, then reduce 
-how much we move up every frame.  At some point, the y_velocity
-variable will become NEGATIVE, meaning we will move DOWN.  We stop
-this whole process just after we've done the movement with a velociy
-equal to the negative of the starting velocity, when we will be
-vertically back where we started.
-
-Record the fact that we have finished jumping, and so it's OK to
-jump again next time the player presses space.
