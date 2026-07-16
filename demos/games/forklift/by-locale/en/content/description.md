@@ -14,7 +14,7 @@ increase.
 The forklift in this demo can move left and right but also slows down over time if no button is pressed or the forklift changes its direction.
 This means that if the player lets go of the `A` and `D` keys they pressed before, the forklift will still move a little bit
 into the previous direction before eventually stopping or moving into the other direction.
-This is done by multiplying the `self.speed` variable in the `when I receive "game-start"` script of the `forklift` sprite
+This is done by multiplying the `speed` variable in the `when I receive "game-start"` script of the `Forklift` sprite
 with a number between 0 and 1. The closer the number is to 1, the lower the friction is and the longer the forklift takes to slow down.
 This makes the movement feel slippery, adding to the challenge of collecting boxes. The code checks for the position of the forklift so that it cannot move
 outside the screen.
