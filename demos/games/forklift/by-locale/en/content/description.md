@@ -22,4 +22,11 @@ outside the screen.
 # Credits
 
 Thanks to Lauryn from Tallaght Community School for working on this demo
-and allowing us to make edits and publish it.
+and allowing us to make edits and publish it. 
+
+Image Credits:
+* [[フリーイラスト] 案内する工場作業員の男性 @
+  publicdomainq.net](https://publicdomainq.net/factory-worker-guide-0038213/), used under
+  [CC PDM 1.0](https://creativecommons.org/publicdomain/mark/1.0/)
+* [Factory Vectors by Vecteezy](https://www.vecteezy.com/free-vector/factory), used under
+  [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
