@@ -85,3 +85,10 @@ _Teaser_.
 The same puzzle was then presented as _Shooting Stars_ in the [May,
 1976 issue of _Byte_ magazine](./Byte-1976-05-pp42-49.pdf), with an
 implementation in 8008 assembler language.
+
+
+# Credits
+
+The swirly background image is by [Nat
+Fleming](https://unsplash.com/@nathanaelewfleming) and is used under
+the [Unsplash Licence](https://unsplash.com/license).
