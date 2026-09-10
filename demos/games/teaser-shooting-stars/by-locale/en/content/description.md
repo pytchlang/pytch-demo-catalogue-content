@@ -32,6 +32,9 @@ click the green flag to start again.
 
 This demo doesn't notice when you win.  That's up to you!
 
+If you end up with all the lights off, then you're stuck and will have
+to start again with the green flag.
+
 
 # How the game works in Pytch
 
@@ -41,10 +44,10 @@ There are a couple of features of the code which might be of interest.
 
 The two-dimensional layout is useful for humans, but doesn't really
 matter once we know which cells affect which other cells when clicked.
-(See the last section below.)  So the cells are just numbered across
-then down from the top left, starting (as is typical in Python) with
-zero.  Each clone has a variable `self.cell_idx` to store this
-information.
+(See the "data not code" section below.)  So the cells are just
+numbered across then down from the top left, starting (as is typical
+in Python) with zero.  Each clone has a variable `self.cell_idx` to
+store this information.
 
 ## Remembering which star was clicked
 
@@ -64,6 +67,13 @@ _flip-galaxy_" script is then very simple.
 
 It can be a useful approach to store information in data not code.
 
+## Background
+
+The swirling background is implemented as a sprite so it can rotate
+and also change size.  This happens independently of anything the
+lights are doing.  There is a bit of maths in the calculation of the
+size, to get the periodic growing and shrinking.
+
 
 # Where the game came from
 
@@ -75,3 +85,10 @@ _Teaser_.
 The same puzzle was then presented as _Shooting Stars_ in the [May,
 1976 issue of _Byte_ magazine](./Byte-1976-05-pp42-49.pdf), with an
 implementation in 8008 assembler language.
+
+
+# Credits
+
+The swirly background image is by [Nat
+Fleming](https://unsplash.com/@nathanaelewfleming) and is used under
+the [Unsplash Licence](https://unsplash.com/license).
