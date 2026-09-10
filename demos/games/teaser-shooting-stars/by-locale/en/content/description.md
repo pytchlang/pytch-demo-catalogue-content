@@ -44,10 +44,10 @@ There are a couple of features of the code which might be of interest.
 
 The two-dimensional layout is useful for humans, but doesn't really
 matter once we know which cells affect which other cells when clicked.
-(See the last section below.)  So the cells are just numbered across
-then down from the top left, starting (as is typical in Python) with
-zero.  Each clone has a variable `self.cell_idx` to store this
-information.
+(See the "data not code" section below.)  So the cells are just
+numbered across then down from the top left, starting (as is typical
+in Python) with zero.  Each clone has a variable `self.cell_idx` to
+store this information.
 
 ## Remembering which star was clicked
 
