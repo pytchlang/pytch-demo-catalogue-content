@@ -67,6 +67,13 @@ _flip-galaxy_" script is then very simple.
 
 It can be a useful approach to store information in data not code.
 
+## Background
+
+The swirling background is implemented as a sprite so it can rotate
+and also change size.  This happens independently of anything the
+lights are doing.  There is a bit of maths in the calculation of the
+size, to get the periodic growing and shrinking.
+
 
 # Where the game came from
 
