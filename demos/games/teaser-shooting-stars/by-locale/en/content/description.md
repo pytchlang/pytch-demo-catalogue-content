@@ -32,6 +32,9 @@ click the green flag to start again.
 
 This demo doesn't notice when you win.  That's up to you!
 
+If you end up with all the lights off, then you're stuck and will have
+to start again with the green flag.
+
 
 # How the game works in Pytch
 
