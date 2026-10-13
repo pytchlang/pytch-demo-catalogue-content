@@ -48,3 +48,16 @@ A few points about the code:
 
 * The code uses `self.stop_all()` as a way to make all the different
   scripts finish when the player either wins or loses.
+
+
+# Credits
+
+Thanks to Technocamps and Dr Lee Clift for allowing us to share this
+project.
+
+[Technocamps](https://www.technocamps.com/en/) is a wide-reaching
+digital programme with a goal of supporting digital upskilling of
+children and adults across Wales.
+
+The demo was written by [Dr Lee
+Clift](https://www.strath.ac.uk/staff/cliftleedr/).
