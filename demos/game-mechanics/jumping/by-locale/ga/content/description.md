@@ -28,7 +28,7 @@ Ba mhaith linn a chinntiú nach dtosaíonn an carachtar léim nua agus é
 fós i lár léime roimhe sin. Úsáideann an cód athróg Boole darb ainm
 `jumping` chun súil a choinneáil air seo. Ar dtús (_nuair a
 chliceáiltear ar an mbratach ghlas_), _níl_ an carachtar ag léim, mar
-sin tá luach `False` ag `jumping` ISa script _nuair a bhrúitear
+sin tá luach `False` ag `jumping`. Sa script _nuair a bhrúitear
 eochair space_, seiceálaimid ar dtús an bhfuil an carachtar i lár
 léime, agus má tá, cuireann muid stop leis an script sin. Ansin
 socraímid `jumping` go `True` fad atá an ghluaiseacht suas agus síos
